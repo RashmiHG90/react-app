@@ -1,0 +1,21 @@
+npm create vite@latest my-react-app
+
+please select : React
+
+please select : JavaScript
+
+use rolldown-vite : no
+
+Yes
+
+It install few dependencies
+
+Then project launch
+
+Open browser and write the URL as
+
+http://localhost:5173/
+
+stop -- control c
+
+restart - npm run dev -(run inside project directory)
