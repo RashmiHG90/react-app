@@ -1,5 +1,6 @@
 import FunctionstyleComponent from "./FunctionstyleComponent";
 import ClassstyleComponent from "./ClassstyleComponent";  
+import { useState } from "react";
 
 function HeaderComponent(){
   return <h1>This is Header Component</h1>
@@ -29,6 +30,7 @@ function MainComponent(){
 }
 
 function App(){
+  let [designation,setDesignation] = useState("Full Stack Developer");
   // return (<div>
   //   Welcome to React JS created by Rashmi
   //   <HeaderComponent></HeaderComponent>
@@ -37,8 +39,8 @@ function App(){
   // </div>)
   return(<div>
     <p>Component types:</p>
-      <FunctionstyleComponent></FunctionstyleComponent>
-      <ClassstyleComponent></ClassstyleComponent>
+      <FunctionstyleComponent id="100" desg={designation}></FunctionstyleComponent>
+      <ClassstyleComponent id="101" desg={designation}></ClassstyleComponent>
   </div>)
 }
 
