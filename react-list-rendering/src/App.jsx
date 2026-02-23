@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Students from './students'
 import Products from './Products'
+import InlineCSSComponent from './InlineCSSComponent'
 
 
 function App() {
@@ -9,9 +10,10 @@ function App() {
     <>
       <div>
         <h2> List rendering using key attribute</h2>
-        <Students/>
+        {/* <Students/>
         <hr />
-        <Products/>
+        <Products/> */}
+        <InlineCSSComponent/>
       </div>
     </>
   )
