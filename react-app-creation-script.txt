@@ -19,3 +19,34 @@ http://localhost:5173/
 stop -- control c
 
 restart - npm run dev -(run inside project directory)
+
+
+
+----------------------------------------------------------
+new project:
+
+C:\Users\rashm\OneDrive\Desktop\Simplilearn-FSD\React-JS-Projects>npm create vite@latest react-use-state-hook-examples
+
+> npx
+> create-vite react-use-state-hook-examples
+
+|
+o  Select a framework:
+|  React
+|
+o  Select a variant:
+|  JavaScript
+|
+o  Use Vite 8 beta (Experimental)?:
+|  No
+|
+o  Install with npm and start now?
+|  No
+|
+o  Scaffolding project in C:\Users\rashm\OneDrive\Desktop\Simplilearn-FSD\React-JS-Projects\react-use-state-hook-examples...
+|
+—  Done. Now run:
+
+  cd react-use-state-hook-examples
+  npm install
+  npm run dev

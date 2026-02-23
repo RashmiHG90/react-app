@@ -4,6 +4,7 @@ function ArrayStateProperty(){
     //state variable is array here
     let [names,setNames] = useState(["Alice ","Bob ","Charlie "]);
     let[fname,setfName]=useState("");
+    let [count,setCount]=useState(0);
 
     let handleChange=(event)=>{
         // console.log("Event get triggered");
@@ -29,6 +30,7 @@ function ArrayStateProperty(){
         //fname will add be added to extracted array elements and new array is formed.
          
         setNames([...names,fname]);
+        setCount(count+1);
         setfName("");
     }
 
@@ -39,6 +41,7 @@ function ArrayStateProperty(){
             <input type="text" placeholder="enter the name" name = "fname" onChange={handleChange}
             value = {fname}/>
             <input type="button" value = "Add names" onClick={addNames} />
+            <p>Count of names added: {count}</p>
             <p>Names of all students: {names}</p>
             <hr />
             <p>First name:{names[0]}</p>
