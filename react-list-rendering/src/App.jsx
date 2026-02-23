@@ -3,6 +3,7 @@ import Students from './students'
 import Products from './Products'
 import InlineCSSComponent from './InlineCSSComponent'
 import MyComponent from './MyComponent'
+import StyledComponentExample from './StyledComponentExample'
 
 
 function App() {
@@ -14,9 +15,9 @@ function App() {
         {/* <Students/>
         <hr />
         <Products/> */}
-        <InlineCSSComponent/>
-        <MyComponent/>
-
+        {/* <InlineCSSComponent/>
+        <MyComponent/> */}
+        <StyledComponentExample/>
       </div>
     </>
   )
