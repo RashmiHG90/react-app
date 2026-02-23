@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+.info {
+  font-size: large;
+  font: optional;
+  color: #d71a1a;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Students from './students'
 import Products from './Products'
 import InlineCSSComponent from './InlineCSSComponent'
+import MyComponent from './MyComponent'
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
         <hr />
         <Products/> */}
         <InlineCSSComponent/>
+        <MyComponent/>
+
       </div>
     </>
   )
