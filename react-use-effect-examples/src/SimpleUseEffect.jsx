@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 function SimpleUseEffect() {
@@ -30,10 +30,10 @@ function SimpleUseEffect() {
         return()=>{
             console.log("Component unmounted - removed.. Simpleuseeffect")
         }
-    },[])
+    },[count1])
 
     return(
-        <div>
+        <React.Fragment>
             <h2>Use Effect example</h2>
             <p>Count in use effect:{count} and Count1: {count1}</p>
             <input type="button" value ="Increment"
@@ -41,7 +41,7 @@ function SimpleUseEffect() {
 
             <input type="button" value ="Increment Count1"
             onClick = {()=> setCount1(count1+1)} />
-        </div>
+        </React.Fragment>
 
     )
 }
