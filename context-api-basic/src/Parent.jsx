@@ -16,7 +16,7 @@ function Parent(){
         <p>Name in Parent Component: {name}</p>
         <Child1 />
         <Child2 />
-        <Child3 />
+        <Child3 fname={name} />
         </MyContext.Provider>
         </>
     )
