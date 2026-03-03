@@ -31,7 +31,7 @@ function loadDataUsingAxiosES5Style(){
 
 async function loadDataUsingAxiosES6Style(){
   try{
-    const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+    const response = await axios.get('http://localhost:3000/products');
     setData(response.data) 
   }catch(error){
     console.log(error);
