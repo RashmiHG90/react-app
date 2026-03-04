@@ -15,11 +15,17 @@ function reducer(state=initialState,action){
     //1st param state object with all property, 2nd property name which you want to change
     //3rd property value
         return{...state, n:state.n+1}
+        //return{...state, n:state.n+1, fname:"SoulSearcher"}//if you want to change multiple property value in state object
     }
 
      if(action.type=="DECREMENT_N"){
         console.log("Decrementing n value in reducer function")
         return{...state, n:state.n-1}
+    }
+
+    if(action.type=="UPDATE_FNAME"){
+        console.log("Updating fname value in reducer function")
+        return{...state, fname:"Soul searcher"}
     }
 
     return state;
