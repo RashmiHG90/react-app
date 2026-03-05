@@ -6,6 +6,8 @@ import Counter from './counter.jsx';
 import { useSelector } from 'react-redux';
 import CounterIncrement from './CounterIncrement.jsx';
 import CounterDecrement from './CounterDecrement.jsx';
+import DynamicCounterIncrement from './DynamicCounterIncrement.jsx';
+import DynamicCounterDecrement from './DynamicCounterDecrement.jsx';
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
       <Counter></Counter>
       <CounterIncrement></CounterIncrement>
       <CounterDecrement></CounterDecrement>
+      <DynamicCounterIncrement></DynamicCounterIncrement>
+      <DynamicCounterDecrement></DynamicCounterDecrement>
     </>
   )
 }
