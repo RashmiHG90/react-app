@@ -50,3 +50,7 @@ o  Scaffolding project in C:\Users\rashm\OneDrive\Desktop\Simplilearn-FSD\React-
   cd react-use-state-hook-examples
   npm install
   npm run dev
+
+Few dependencies --
+npm install axios redux react-redux  
+npm install @reduxjs/toolkit react-redux
