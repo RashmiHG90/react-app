@@ -34,7 +34,8 @@ describe("Login component testing",()=>{
         await userEvent.click(
             screen.getByRole("button",{name: "Login"})
         )
-        expect(screen.getByText("Login successful")).toBeInTheDocument();        
+        expect(screen.getByText("Login successful")).toBeInTheDocument();  
+        //expect(screen.getByRole("")).toHaveTextContent("Login successful");      
     })
 
 })
