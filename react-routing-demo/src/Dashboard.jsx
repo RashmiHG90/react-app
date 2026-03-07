@@ -4,13 +4,18 @@ function Dashboard(){
 
     let navigate = useNavigate()
 
+    let user = sessionStorage.getItem("user") //get email id from session storage
+
     return(
         <div>
-        <h4>Welcome to Home Page</h4>
+        <h4>Welcome {user} to Home Page</h4>
         <br />
         <input type="button"
         value="Logout"
-        onClick={()=> navigate("/login")}
+        onClick={()=> {
+            sessionStorage.removeItem("user") //remove email id from session storage
+            navigate("/login")}
+        }
          />
         </div>
     )

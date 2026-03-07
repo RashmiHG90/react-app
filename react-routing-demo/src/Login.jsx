@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import loginDBDetails from "./loginDB"
 
 function Login(){
 
@@ -12,15 +13,23 @@ function Login(){
     let checkLoginDetails = (e) => {
         e.preventDefault();
         //console.log(emailId + " " + password)
-      if(emailId === "admin@gmail.com" && password === "admin123"){
-        alert ("Login successful")
-        setMessage("Login successful")
-        navigate('/dashboard')
-      }else{
-        // alert("Login failed try once again")
-        setMessage("Invalid username or password")  
-      }
+    //   if(emailId === "admin@gmail.com" && password === "admin123"){
+    //     alert ("Login successful")
+    //     setMessage("Login successful")
+    //     navigate('/dashboard')
+    //   }else{
+    //     // alert("Login failed try once again")
+    //     setMessage("Invalid username or password")  
+    //   }
 
+     //check details from in memory db
+     let result = loginDBDetails.find(ll=> ll.emailId === emailId && ll.password === password)
+         if(result){
+            sessionStorage.setItem("user",emailId) //set email id in session storage
+            navigate('/dashboard')
+         }else{
+            setMessage("Invalid username or password")
+         }
         setEmailId('')
         setPassword('')
         
