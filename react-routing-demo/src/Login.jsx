@@ -25,6 +25,9 @@ function Login(){
      //check details from in memory db
      let result = loginDBDetails.find(ll=> ll.emailId === emailId && ll.password === password)
          if(result){
+            //token value retrieved from backend technology, token id being unique.
+            //sessionStorage.setItem("token", tokenValue)
+
             sessionStorage.setItem("user",emailId) //set email id in session storage
             navigate('/dashboard')
          }else{

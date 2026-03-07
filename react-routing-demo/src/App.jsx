@@ -5,6 +5,7 @@ import {AboutUs} from './AboutUs'
 import {ContactUs} from './ContactUs'
 import Login from './Login'
 import Dashboard from './Dashboard'
+import { NotFound } from './NotFound'
 
 function App() {
  
@@ -25,7 +26,13 @@ function App() {
       <Route path='/aboutUs' element={<AboutUs />} />
       <Route path='/contactUs' element={<ContactUs />} />
       <Route path='/login' element={<Login />} />
-      <Route path='/dashboard' element={<Dashboard />} />
+      
+        <Route path='/dashboard' element={
+          <ProtectedRouter>
+          <Dashboard />
+          </ProtectedRouter>
+        } />     
+      <Route path='*'element={<NotFound/>} /> 
      </Routes>
     </>
   )
