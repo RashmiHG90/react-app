@@ -56,5 +56,12 @@ npm install axios redux react-redux
 
 npm install @reduxjs/toolkit react-redux axios react-router-dom
 
+For testing or JEST library for react--
+npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
+npm install -D @testing-library/user-event
+
+-D is for development mode..
+
+
 to bring up json server:
 json-server newproducts.json

@@ -6,6 +6,7 @@ import {ContactUs} from './ContactUs'
 import Login from './Login'
 import Dashboard from './Dashboard'
 import { NotFound } from './NotFound'
+import ProtectedRouter from './ProtectedRouter'
 
 function App() {
  
