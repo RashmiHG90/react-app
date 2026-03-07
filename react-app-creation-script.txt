@@ -54,7 +54,7 @@ o  Scaffolding project in C:\Users\rashm\OneDrive\Desktop\Simplilearn-FSD\React-
 Few dependencies --
 npm install axios redux react-redux  
 
-npm install @reduxjs/toolkit react-redux axios
+npm install @reduxjs/toolkit react-redux axios react-router-dom
 
 to bring up json server:
 json-server newproducts.json
