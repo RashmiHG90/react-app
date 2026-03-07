@@ -4,6 +4,7 @@ import {Welcome} from './Welcome'
 import {AboutUs} from './AboutUs'
 import {ContactUs} from './ContactUs'
 import Login from './Login'
+import Dashboard from './Dashboard'
 
 function App() {
  
@@ -24,6 +25,7 @@ function App() {
       <Route path='/aboutUs' element={<AboutUs />} />
       <Route path='/contactUs' element={<ContactUs />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/dashboard' element={<Dashboard />} />
      </Routes>
     </>
   )
