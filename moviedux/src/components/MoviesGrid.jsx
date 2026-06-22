@@ -1,10 +1,15 @@
 import {useState, useEffect} from 'react';
 import '../styles.css';
+import MovieCard from './MovieCard';
 
 
 export default function MoviesGrid(){
 
-    const [movies, setMovies] = useState([]);    
+    const [movies, setMovies] = useState([]);  
+    const [searchTerm, setSearchTerm] = useState("");  
+    const [genre, setGenre] =useState("All Genres");
+    const [rating, setRating]=useState("All");
+
 
     useEffect(()=>{
         fetch("movies.json")
@@ -12,22 +17,85 @@ export default function MoviesGrid(){
         .then(data => setMovies(data))      
         //setMovies();
     },[])
+
+    const handleSearchChange = (e)=>{
+       setSearchTerm(e.target.value);
+    }
+
+    const handleGenreChange = (e)=>{
+       setGenre(e.target.value);
+    }
+
+     const handleRatingChange = (e)=>{
+       setRating(e.target.value);
+    }
+
+    const matchesGenre = (movie, genre) =>{
+        return genre === "All Genres" || movie.genre.toLowerCase()=== genre.toLowerCase();
+    }
+
+    const matchesSearchTerm = (movie,searchTerm) =>{
+        return movie.title.toLowerCase().includes(searchTerm.toLowerCase());
+    }
+
+    const matchesRating = (movie, rating) =>{
+        switch(rating){
+            case "All":
+                return true;
+            case 'Good':
+                return movie.rating >= 8;
+            case 'Ok':
+                return movie.rating >= 5 && movie.rating < 8;
+            case 'Bad':
+                return movie.rating < 5;
+
+            default:
+                return false;
+        }
+    }
     
+    //after adding this filter, changes movies.map to filteredMovies.map and it's working as expected
+    const filteredMovies = movies.filter((movie) =>
+        //movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+       matchesGenre(movie, genre) &&
+       matchesRating(movie, rating) &&
+       matchesSearchTerm(movie, searchTerm)
+    )
 
     return(
+        <>
+        <input type="text" className='search-input' placeholder='Search movies...' 
+        value={searchTerm} onChange={handleSearchChange}/>
+
+        <div className='filter-bar'>
+            <div className='filter-slot'>
+            <label>Genre</label>
+            <select className='filter-dropdown' value={genre} onChange={handleGenreChange}>
+                <option>All Genres</option>
+                <option>Action</option>
+                <option>Drama</option>
+                <option>Fantasy</option>
+                <option>Horror</option>
+            </select>
+            </div>
+            <div className='filter-slot' value={rating} onChange={handleRatingChange}>
+            <label>Rating</label>
+            <select className='filter-dropdown'>
+                <option>All</option>
+                <option>Good</option>
+                <option>Ok</option>
+                <option>Bad</option>
+            </select>
+            </div>
+
+        </div>
         <div className='movies-grid'>
             {
-                movies?.map(movie =>(
-                    <div key={movie.id} className='movie-card'>
-                        <img src={`images/${movie.image}`} alt={movie.title}/>
-                            <div className='movie-card-info'>
-                            <h3 className ='movie-card-title'>{movie.title}</h3>
-                            <p className='movie-card-genre'>{movie.genre}</p>
-                            <p className='movie-card-rating'>{movie.rating}</p>
-                            </div>
-                    </div>
+                filteredMovies.map(movie =>(
+                    <MovieCard movie={movie} key={movie.id}></MovieCard>
                 ))
             }
         </div>
+        </>
     )
 }
