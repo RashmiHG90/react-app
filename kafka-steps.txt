@@ -1,0 +1,24 @@
+This video provides a step-by-step overview of installing and running Apache Kafka on a Windows system using KRaft mode (without Zookeeper). It walks through generating a UUID, formatting Kafka storage, starting the server, creating a topic, and sending/receiving messages using Kafka's console tools. Ideal for developers looking to quickly get started with Kafka on Windows for local development or testing.
+
+Important link
+Kafka - https://kafka.apache.org/downloads  
+Java - https://www.oracle.com/java/technolog...
+
+Run command to generate UUID
+kafka-storage.bat random-uuid
+
+Run the formatting command:
+kafka-storage.bat format -t sV6FJhEoQ7qkZN8amOQKew -c C:\kafka\config\kraft\server.properties
+
+Start the Kafka Server using below Command
+kafka-server-start.bat C:\kafka\config\kraft\server.properties
+
+Open new CMD keep Kafka server cmd running.
+kafka-topics.bat --create --topic test --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+In the new CMD which is open run below command
+Producer (send messages):
+kafka-console-producer.bat --topic test --bootstrap-server localhost:9092
+
+Open another New CMD: Run below
+kafka-console-consumer.bat --topic test --from-beginning --bootstrap-server localhost:9092

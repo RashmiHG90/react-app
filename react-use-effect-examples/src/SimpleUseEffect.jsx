@@ -7,17 +7,17 @@ function SimpleUseEffect() {
     let[count1, setCount1] = useState(0);
 
 
-    //Simple use effect without dependencies array, 
-    // it will be called first and every time when component re-renders
+    // // Simple use effect without dependencies array, 
+    // // it will be called first and every time when component re-renders
     // useEffect(()=>{
     //     console.log("Use effect called, component loaded")
     // })
 
      //useEffect with empty dependency array
     // it will be called only once when component first loads or mounts
-    // useEffect(()=>{
-    //     console.log("Use effect with empty dependency array")
-    // },[]);
+    useEffect(()=>{
+        console.log("Use effect with empty dependency array")
+    },[]);
 
     //useEffect with dependency array with count variable
     useEffect(()=>{
