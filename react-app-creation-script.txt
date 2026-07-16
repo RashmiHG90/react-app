@@ -62,6 +62,27 @@ npm install -D @testing-library/user-event
 
 -D is for development mode..
 
+For testing react in vitest --
+npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
+
+For testing you have to make below changes
+1. add these configuration to eslint.config.js
+globals: {
+        ...globals.browser,
+        ...globals.vitest,
+      },
+2.add below lines to vite.config.js
+test:{
+    environment: 'jsdom',
+    globals:true,
+    setupFiles: "./src/setupTests.js"
+  },
+3.Have setupTests - for mock test data
+4.Individual Component test files
+runs all test -- npm test
+runs all tests -- npx vitest run 
+
+
 
 to bring up json server:
 json-server newproducts.json
